@@ -1,6 +1,15 @@
-import { redirect } from 'next/navigation';
+import { HeroParallaxDemo } from '@/components/hero-parallax-demo';
+import { BuildAppsSection } from '@/components/build-apps-section';
+import { ServicesSection } from '@/components/services-section';
+import { TechStackSection } from '@/components/tech-stack-section';
 
 export default function Home() {
-  // Redirect to the home route group
-  redirect('/home');
+  return (
+    <>
+      <HeroParallaxDemo />
+      <BuildAppsSection />
+      <ServicesSection />
+      <TechStackSection />
+    </>
+  );
 }

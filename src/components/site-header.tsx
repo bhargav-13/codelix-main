@@ -45,7 +45,7 @@ export const SiteHeader = () => {
 
     return (
         <header className={`w-full fixed top-0 z-50 transition-all duration-300 ${
-            scrolled ? 'bg-black/90 py-2 shadow-xl' : 'bg-black/80 py-4'
+            scrolled ? 'bg-white py-2 shadow-md' : 'bg-white py-4'
         }`}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
@@ -71,14 +71,13 @@ export const SiteHeader = () => {
                                     whileTap={{ scale: 0.95 }}
                                     className="relative"
                                 >
-                                    <button
-                                        onClick={() => handleNavigation(item.href)}
-                                        className={`px-3 py-2 text-sm font-medium transition-colors ${
-                                            active ? 'text-white' : 'text-gray-300 hover:text-white'
+                                    <Link href={item.href} onClick={() => handleNavigation(item.href)}
+                                        className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                                            active ? 'text-blue-600 font-semibold' : 'text-gray-600 hover:text-blue-600 hover:bg-gray-50'
                                         }`}
                                     >
                                         {item.label}
-                                    </button>
+                                    </Link>
                                     {active && (
                                         <motion.div
                                             layoutId="activeNav"
@@ -99,7 +98,7 @@ export const SiteHeader = () => {
                     <div className="flex items-center md:hidden">
                         <button
                             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                            className="inline-flex items-center justify-center p-2 rounded-md text-gray-300 hover:text-white focus:outline-none"
+                            className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
                             aria-expanded="false"
                         >
                             <span className="sr-only">Open main menu</span>
@@ -111,12 +110,14 @@ export const SiteHeader = () => {
 
                     {/* Desktop: Call to Action Button */}
                     <div className="hidden md:block">
-                        <Link
-                            href="#connect"
-                            className="bg-white text-black px-4 py-2 rounded-md hover:bg-gray-200 transition-all text-sm font-semibold shadow-lg hover:shadow-white/20"
-                        >
-                            Let&apos;s Connect
-                        </Link>
+                        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white rounded-lg shadow-lg border border-gray-100">
+                            <Link
+                                href="#connect"
+                                className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-all text-sm font-semibold shadow-lg hover:shadow-white/20"
+                            >
+                                Let&apos;s Connect
+                            </Link>
+                        </div>
                     </div>
                 </div>
 
@@ -136,9 +137,7 @@ export const SiteHeader = () => {
                                         key={item.href}
                                         onClick={() => handleNavigation(item.href)}
                                         className={`block px-4 py-3 text-sm w-full text-left ${
-                                            isActive(item.href)
-                                                ? 'bg-gray-900 text-white'
-                                                : 'text-gray-300 hover:bg-gray-800 hover:text-white'
+                                            isActive(item.href) ? 'bg-blue-50 text-blue-600' : 'text-gray-700 hover:bg-gray-50 hover:text-blue-600'
                                         }`}
                                     >
                                         {item.label}
