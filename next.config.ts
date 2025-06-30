@@ -23,7 +23,15 @@ const nextConfig: NextConfig = {
     return config;
   },
   images: {
-    domains: [],
+    domains: ['aceternity.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'aceternity.com',
+        port: '',
+        pathname: '/images/**',
+      },
+    ],
   },
 };
 
