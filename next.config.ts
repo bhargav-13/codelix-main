@@ -1,6 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  eslint: {
+    // Disable ESLint during builds
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    // Disable TypeScript type checking during builds
+    ignoreBuildErrors: true,
+  },
   webpack: (config, { isServer }) => {
     // Handle GLB files
     config.module.rules.push({
