@@ -115,7 +115,7 @@ export const SiteHeader = () => {
                             href="#connect"
                             className="bg-white text-black px-4 py-2 rounded-md hover:bg-gray-200 transition-all text-sm font-semibold shadow-lg hover:shadow-white/20"
                         >
-                            Let's Connect
+                            Let&apos;s Connect
                         </Link>
                     </div>
                 </div>
@@ -150,7 +150,7 @@ export const SiteHeader = () => {
                                     onClick={() => setMobileMenuOpen(false)}
                                     className="block px-4 py-3 text-sm text-center text-white bg-blue-600 hover:bg-blue-700 transition-colors"
                                 >
-                                    Let's Connect
+                                    Let&apos;s Connect
                                 </Link>
                             </div>
                         </motion.div>

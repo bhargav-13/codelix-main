@@ -12,7 +12,7 @@ function LanyardCard() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   
   // Handle dragging
-  const handlePointerDown = (e: any) => {
+  const handlePointerDown = (e: THREE.Event & { stopPropagation: () => void }) => {
     e.stopPropagation();
     setDragging(true);
     document.body.style.cursor = 'grabbing';
@@ -25,7 +25,7 @@ function LanyardCard() {
 
   useFrame(({ mouse, viewport }) => {
     if (dragging) {
-      // Convert mouse coordinates to 3D space
+      // Convert mouse coordinates to 3D space with proper typing
       const x = (mouse.x * viewport.width) / 2;
       const y = (mouse.y * viewport.height) / 2;
       
@@ -47,17 +47,14 @@ function LanyardCard() {
     <group>
       {/* Lanyard string */}
       <line>
-        <bufferGeometry
-          attach="geometry"
-        >
+        <bufferGeometry>
           <bufferAttribute
             attach="attributes-position"
+            args={[new Float32Array([0, 0, 0, 0, 0, -10]), 3]}
             count={2}
-            array={new Float32Array([0, 5, 0, position.x, position.y + 2, 0])}
-            itemSize={3}
           />
         </bufferGeometry>
-        <lineBasicMaterial attach="material" color="#3b82f6" linewidth={2} />
+        <lineBasicMaterial attach="material" color="#666" linewidth={2} />
       </line>
       
       {/* Card */}

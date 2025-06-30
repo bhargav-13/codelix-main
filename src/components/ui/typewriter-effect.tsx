@@ -41,7 +41,7 @@ export const TypewriterEffect = ({
         }
       );
     }
-  }, [isInView]);
+  }, [isInView, animate]);
 
   const renderWords = () => (
     <motion.div ref={scope} className="inline">

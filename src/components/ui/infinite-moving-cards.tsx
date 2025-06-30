@@ -44,7 +44,7 @@ export const InfiniteMovingCards = ({
 
       setStart(true);
     }
-  }, []);
+  }, [direction, speed]);
 
   return (
     <div

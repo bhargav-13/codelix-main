@@ -45,7 +45,7 @@ export function Footer() {
           {/* Right Column - Newsletter */}
           <div className="max-w-[400px]">
             <h3 className="font-mulish text-white text-xl font-medium mb-4">
-              Let's Connect
+              Let&apos;s connect
             </h3>
             <div className="flex flex-col sm:flex-row gap-4 items-end">
               <div className="flex-1">

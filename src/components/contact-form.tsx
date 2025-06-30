@@ -4,7 +4,7 @@ import React from "react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
+// Motion removed as it's not being used
 
 const ContactForm = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -18,7 +18,7 @@ const ContactForm = () => {
         Get in Touch
       </h2>
       <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-300">
-        Have questions or want to discuss a project? We'd love to hear from you.
+        Have questions or want to discuss a project? We&apos;d love to hear from you.
       </p>
 
       <form className="mt-8" onSubmit={handleSubmit}>
@@ -54,7 +54,7 @@ const ContactForm = () => {
           className="group/btn relative flex h-10 w-full items-center justify-center rounded-md bg-gradient-to-r from-blue-600 to-cyan-500 font-medium text-white shadow-md transition-all hover:from-blue-700 hover:to-cyan-600"
           type="submit"
         >
-          Send Message &rarr;
+          Let&apos;s work together&rarr;
           <BottomGradient />
         </button>
       </form>
