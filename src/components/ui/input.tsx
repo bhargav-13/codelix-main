@@ -13,11 +13,12 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     const mouseY = useMotionValue(0);
     const radius = 400;
 
-    function handleMouseMove(event: React.MouseEvent<HTMLDivElement>) {
-      const rect = event.currentTarget.getBoundingClientRect();
+    const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
+      const target = event.currentTarget as HTMLElement;
+      const rect = target.getBoundingClientRect();
       mouseX.set(event.clientX - rect.left);
       mouseY.set(event.clientY - rect.top);
-    }
+    };
     
     return (
       <motion.div

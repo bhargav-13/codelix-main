@@ -12,7 +12,7 @@ function LanyardCard() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   
   // Handle dragging
-  const handlePointerDown = (e: THREE.Event & { stopPropagation: () => void }) => {
+  const handlePointerDown = (e: React.PointerEvent) => {
     e.stopPropagation();
     setDragging(true);
     document.body.style.cursor = 'grabbing';

@@ -1,15 +1,9 @@
 "use client";
 
+import * as React from "react";
 import { cn } from "@/lib/utils";
-import React, { useEffect, useState } from "react";
 
-export const InfiniteMovingCards = ({
-  items,
-  direction = "left",
-  speed = "fast",
-  pauseOnHover = true,
-  className,
-}: {
+interface InfiniteMovingCardsProps {
   items: {
     quote: string;
     name: string;
@@ -19,32 +13,84 @@ export const InfiniteMovingCards = ({
   speed?: "fast" | "normal" | "slow";
   pauseOnHover?: boolean;
   className?: string;
+}
+
+export const InfiniteMovingCards: React.FC<InfiniteMovingCardsProps> = ({
+  items,
+  direction = "left",
+  speed = "fast",
+  pauseOnHover = true,
+  className,
 }) => {
   const containerRef = React.useRef<HTMLDivElement>(null);
   const scrollerRef = React.useRef<HTMLUListElement>(null);
-  const [start, setStart] = useState(false);
+  const [start, setStart] = React.useState(false);
 
-  useEffect(() => {
-    if (containerRef.current && scrollerRef.current) {
-      const scrollerContent = Array.from(scrollerRef.current.children);
-      scrollerContent.forEach((item) => {
-        const clone = item.cloneNode(true);
-        scrollerRef.current?.appendChild(clone);
-      });
+  // Setup animation and handle cleanup
+  React.useEffect(() => {
+    if (!scrollerRef.current || !containerRef.current) return;
 
-      containerRef.current.style.setProperty(
-        "--animation-direction",
-        direction === "left" ? "forwards" : "reverse"
-      );
+    const scroller = scrollerRef.current;
+    const container = containerRef.current;
+    
+    // Set animation properties
+    container.style.setProperty(
+      "--animation-duration",
+      speed === "fast" ? "20s" : speed === "normal" ? "40s" : "80s"
+    );
+    container.style.setProperty(
+      "--animation-direction",
+      direction === "left" ? "forwards" : "reverse"
+    );
 
-      containerRef.current.style.setProperty(
-        "--animation-duration",
-        speed === "fast" ? "20s" : speed === "normal" ? "40s" : "80s"
-      );
+    // Remove any existing duplicated items
+    const scrollerContent = Array.from(scroller.children);
+    scrollerContent.forEach((item: Element) => {
+      if (item.hasAttribute('data-duplicated')) {
+        scroller.removeChild(item);
+      }
+    });
 
-      setStart(true);
+    // Add new duplicated items
+    scrollerContent.forEach((item: Element) => {
+      const duplicatedItem = item.cloneNode(true) as HTMLElement;
+      if (duplicatedItem instanceof HTMLElement) {
+        duplicatedItem.setAttribute('data-duplicated', 'true');
+        scroller.appendChild(duplicatedItem);
+      }
+    });
+
+    // Set up animation
+    scroller.style.animation = `scroll ${speed === "fast" ? 20 : speed === "normal" ? 40 : 80}s linear infinite`;
+    scroller.style.animationDirection = direction === "left" ? "normal" : "reverse";
+
+    // Handle hover pause if enabled
+    const pauseAnimation = () => {
+      scroller.style.animationPlayState = "paused";
+    };
+    
+    const resumeAnimation = () => {
+      scroller.style.animationPlayState = "running";
+    };
+
+    if (pauseOnHover) {
+      scroller.addEventListener("mouseenter", pauseAnimation);
+      scroller.addEventListener("mouseleave", resumeAnimation);
     }
-  }, [direction, speed]);
+
+    setStart(true);
+
+    // Cleanup function
+    return () => {
+      if (pauseOnHover) {
+        scroller.removeEventListener("mouseenter", pauseAnimation);
+        scroller.removeEventListener("mouseleave", resumeAnimation);
+      }
+      // Reset animation
+      scroller.style.animation = 'none';
+      scroller.offsetHeight; // Trigger reflow
+    };
+  }, [direction, speed, pauseOnHover]);
 
   return (
     <div
