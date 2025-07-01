@@ -4,30 +4,17 @@ import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 import Image from 'next/image';
 
 export function BuildAppsSection() {
-  const words = [
+  const wordsLine1 = [
     {
-      text: "Build",
+      text: "Build something extraordinary",
       className: "text-base md:text-2xl lg:text-4xl font-bold text-black"
     },
+  ];
+
+  const wordsLine2 = [
     {
-      text: "awesome",
-      className: "text-base md:text-2xl lg:text-4xl font-bold text-black"
-    },
-    {
-      text: "apps",
-      className: "text-base md:text-2xl lg:text-4xl font-bold text-black"
-    },
-    {
-      text: "with",
-      className: "text-base md:text-2xl lg:text-4xl font-bold text-black"
-    },
-    {
-      text: "Codelix",
+      text: "with codelix.",
       className: "text-base md:text-2xl lg:text-4xl font-bold text-blue-600"
-    },
-    {
-      text: "|",
-      className: "text-base md:text-2xl lg:text-4xl font-bold text-blue-600 animate-pulse"
     },
   ];
 
@@ -38,11 +25,20 @@ export function BuildAppsSection() {
           <div className="w-full md:w-1/2 mb-6 md:mb-0 md:pr-8">
             <div className="space-y-4">
               <div className="overflow-x-auto w-full">
-                <TypewriterEffectSmooth 
-                  words={words} 
-                  className="text-left text-lg md:text-2xl lg:text-4xl font-bold whitespace-nowrap"
-                  cursorClassName="h-6 md:h-10"
-                />
+                <div>
+                  <TypewriterEffectSmooth 
+                    words={wordsLine1} 
+                    className="text-left text-lg md:text-2xl lg:text-4xl font-bold whitespace-nowrap"
+                    cursorClassName="h-6 md:h-10"
+                  />
+                </div>
+                <div className="mt-2">
+                  <TypewriterEffectSmooth 
+                    words={wordsLine2} 
+                    className="text-left text-lg md:text-2xl lg:text-4xl font-bold whitespace-nowrap"
+                    cursorClassName="h-6 md:h-10"
+                  />
+                </div>
               </div>
               <p className="text-gray-600 text-base">
               Codelix was founded with a simple belief — that technology should empower, not overwhelm. Our vision is to build a digital future that feels intuitive, beautiful, and built for people.
@@ -52,12 +48,13 @@ export function BuildAppsSection() {
               </button>
             </div>
           </div>
-          <div className="w-full md:w-1/2">
-            <div className="relative w-full max-w-md">
+          <div className="w-full md:w-1/2 flex justify-center items-center px-4 md:px-0">
+            <div className="relative w-full max-w-md md:max-w-xs lg:max-w-md xl:max-w-lg">
               <img 
                 src="build.png" 
                 alt="People working with Codelix" 
-                className="w-full h-auto" 
+                className="w-full h-auto object-contain" 
+                style={{ maxHeight: '370px' }}
               />
             </div>
           </div>

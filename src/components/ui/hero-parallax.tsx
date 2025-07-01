@@ -109,11 +109,6 @@ export const Header = () => {
 <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200">
   Behind every great brand is a tech team that gets it. That’s what we bring — clarity, collaboration, and consistent execution.
 </p>
-<button
-  className="mt-8 px-8 py-3 rounded-full bg-[#3E7DFC] text-white font-semibold text-lg shadow-lg hover:bg-blue-700 transition-colors"
->
-  Build With Purpose 
-</button>
     </div>
   );
 };
@@ -144,10 +139,6 @@ export const ProductCard = ({
           alt={product.title}
           priority
         />
-        <div className="absolute inset-0 h-full w-full bg-black/80 pointer-events-none z-10" />
-        <h2 className="absolute bottom-4 left-4 text-white z-20 text-xl font-semibold drop-shadow-lg">
-          {product.title}
-        </h2>
       </div>
     </motion.div>
   );
