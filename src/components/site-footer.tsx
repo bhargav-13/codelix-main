@@ -75,7 +75,7 @@ export function SiteFooter() {
             <h3 className="text-sm font-semibold uppercase mb-4" style={{ color: '#3E7DFC' }}>CONTACT INFO</h3>
             <div className="space-y-2">
               <p className="text-gray-400 text-sm">info@codelix.com</p>
-              <p className="text-gray-400 text-sm">+91 9429269295</p>
+              <p className="text-gray-400 text-sm">+91 9429629295</p>
             </div>
           </div>
           <div>

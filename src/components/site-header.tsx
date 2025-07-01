@@ -12,11 +12,11 @@ export const SiteHeader = () => {
     const pathname = usePathname();
     const router = useRouter();
     
-    // Updated nav items to use anchor links and reflect sections
     const navItems = [
         { label: 'Home', href: '#home' },
         { label: 'Services', href: '#services' },
         { label: 'Technologies', href: '#technologies' },
+        { label: 'Testimonials', href: '#testimonials' },
         { label: 'Contact', href: '#contact' }
     ];
 
@@ -29,61 +29,20 @@ export const SiteHeader = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    // Track active section for highlight
-    const [activeSection, setActiveSection] = useState('home');
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const sections = [
-                { id: 'home', offset: 0 },
-                { id: 'services', offset: 0 },
-                { id: 'technologies', offset: 0 },
-                { id: 'contact', offset: 0 }
-            ];
-            sections.forEach(section => {
-                const el = document.getElementById(section.id);
-                if (el) {
-                    section.offset = el.getBoundingClientRect().top + window.scrollY;
-                }
-            });
-            const scrollPosition = window.scrollY + 120;
-            let current = 'home';
-            for (let i = 0; i < sections.length; i++) {
-                if (scrollPosition >= sections[i].offset) {
-                    current = sections[i].id;
-                }
-            }
-            setActiveSection(current);
-        };
-        window.addEventListener('scroll', handleScroll);
-        handleScroll();
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
-    // Check if nav item is active section
-    const isActive = (hash: string) => {
-        if (!hash.startsWith('#')) return false;
-        return activeSection === hash.replace('#', '');
+    // Check if current route is active
+    const isActive = (path: string) => {
+        if (!pathname) return false;
+        if (path === '/home') {
+            return pathname === '/' || pathname === '/home';
+        }
+        return pathname.startsWith(path);
     };
 
-
-    // Smooth scroll to section and close mobile menu
+    // Close mobile menu when navigating
     const handleNavigation = (href: string) => {
         setMobileMenuOpen(false);
-        if (href.startsWith('#')) {
-            const id = href.replace('#', '');
-            const el = document.getElementById(id);
-            if (el) {
-                window.scrollTo({
-                    top: el.offsetTop - 80,
-                    behavior: 'smooth',
-                });
-            }
-        } else {
-            router.push(href);
-        }
+        router.push(href);
     };
-
 
     return (
         <header className={`w-full fixed top-0 z-50 transition-all duration-300 ${
@@ -114,7 +73,7 @@ export const SiteHeader = () => {
                                     className="relative"
                                 >
                                     <Link href={item.href} onClick={() => handleNavigation(item.href)}
-                                        className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                                        className={`px-2 py-1 rounded text-xs font-medium transition-colors ${
                                             active ? 'text-blue-600 font-semibold' : 'text-gray-600 hover:text-blue-600 hover:bg-gray-50'
                                         }`}
                                     >
