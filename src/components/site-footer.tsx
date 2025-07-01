@@ -32,7 +32,7 @@ export function SiteFooter() {
     <footer className="bg-[#23262f] text-gray-300 pt-12 pb-2 px-2 md:px-0">
       <div className="max-w-7xl mx-auto relative flex flex-wrap justify-around items-start">
         {/* Contact Card */}
-        <div className="bg-[#23262f] border border-[#353843] rounded-2xl p-6 flex flex-col min-w-[300px] max-w-sm w-full md:w-1/4 mx-auto md:mx-0 shadow-lg">
+        <div className="bg-[#23262f] border border-[#353843] rounded-2xl p-6 flex flex-col min-w-[300px] max-w-sm w-full md:w-1/4 mx-auto md:mx-0 shadow-lg mb-8 md:mb-0">
           <span className="text-xs text-blue-400 tracking-widest mb-2">START THE CONVERSATION</span>
           <div className="mb-2">
             <span className="text-2xl font-semibold text-blue-400">Together</span>
