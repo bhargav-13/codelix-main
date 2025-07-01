@@ -104,13 +104,16 @@ export const Header = () => {
   return (
     <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full left-0 top-0">
       <h1 className="text-2xl md:text-7xl font-bold dark:text-white">
-        The Ultimate <br /> development studio
-      </h1>
-      <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200">
-        We build beautiful products with the latest technologies and frameworks.
-        We are a team of passionate developers and designers that love to build
-        amazing products.
-      </p>
+  Let’s Build What <br /> Grows Your Business
+</h1>
+<p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200">
+  Behind every great brand is a tech team that gets it. That’s what we bring — clarity, collaboration, and consistent execution.
+</p>
+<button
+  className="mt-8 px-8 py-3 rounded-full bg-[#3E7DFC] text-white font-semibold text-lg shadow-lg hover:bg-blue-700 transition-colors"
+>
+  Build With Purpose 
+</button>
     </div>
   );
 };
@@ -132,7 +135,7 @@ export const ProductCard = ({
       whileHover={{ y: -20 }}
       className="group/product h-96 w-[30rem] relative shrink-0"
     >
-      <a href={product.link} className="block group-hover/product:shadow-2xl relative h-full w-full">
+      <div className="block relative h-full w-full">
         <Image
           src={product.thumbnail}
           fill
@@ -141,11 +144,11 @@ export const ProductCard = ({
           alt={product.title}
           priority
         />
-      </a>
-      <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none" />
-      <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">
-        {product.title}
-      </h2>
+        <div className="absolute inset-0 h-full w-full bg-black/80 pointer-events-none z-10" />
+        <h2 className="absolute bottom-4 left-4 text-white z-20 text-xl font-semibold drop-shadow-lg">
+          {product.title}
+        </h2>
+      </div>
     </motion.div>
   );
 };

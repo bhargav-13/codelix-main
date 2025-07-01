@@ -6,40 +6,46 @@ export function ServicesSection() {
   const services = [
     {
       id: 'web-dev',
-      title: "Web Development",
-      description: "Custom, responsive websites built with modern technologies to ensure fast loading and great user experience.",
-      link: "#web-development"
+      title: '🌐 Web Development',
+      description:
+        'We build fast, secure, and scalable websites tailored to your business needs — from clean corporate sites to complex web platforms. Our focus is on performance, responsiveness, and smooth user experience across all devices.',
+      link: '#web-development',
     },
     {
-      id: 'mobile-apps',
-      title: "Mobile Apps",
-      description: "Cross-platform mobile applications that work seamlessly on both iOS and Android devices.",
-      link: "#mobile-apps"
+      id: 'app-dev',
+      title: '📱 Application Development',
+      description:
+        'Whether it’s Android, iOS, or cross-platform — we craft mobile apps that are intuitive, reliable, and user-friendly. From concept to launch, we develop applications that deliver real value to your users and business.',
+      link: '#application-development',
     },
     {
       id: 'ui-ux',
-      title: "UI/UX Design",
-      description: "Beautiful and intuitive user interfaces designed to enhance user experience and engagement.",
-      link: "#ui-ux-design"
+      title: '🎨 UI/UX Design',
+      description:
+        'We design seamless digital experiences that are both functional and visually compelling. Using tools like Figma, we create user journeys, wireframes, and interfaces that prioritize clarity, usability, and engagement.',
+      link: '#ui-ux-design',
     },
     {
-      id: 'ecommerce',
-      title: "E-commerce Solutions",
-      description: "Complete online store setup with secure payment gateways and inventory management.",
-      link: "#ecommerce-solutions"
+      id: 'agentic-ai',
+      title: '🤖 Agentic AI Solutions',
+      description:
+        'We design and deploy intelligent AI agents tailored to automate tasks, engage users, and enhance decision-making. From chatbots to custom AI workflows, our agentic solutions help businesses scale with smart automation.',
+      link: '#agentic-ai',
     },
     {
-      id: 'cloud',
-      title: "Cloud Services",
-      description: "Scalable cloud infrastructure and deployment solutions for your applications.",
-      link: "#cloud-services"
+      id: 'marketing',
+      title: '📈 Digital Marketing',
+      description:
+        'We help brands grow online through data-driven marketing strategies — including high-converting Meta (Facebook & Instagram) and Google Ads, content marketing, and social media campaigns focused on visibility and ROI.',
+      link: '#digital-marketing',
     },
     {
-      id: 'support',
-      title: "Maintenance & Support",
-      description: "Ongoing support and maintenance to keep your applications running smoothly.",
-      link: "#maintenance-support"
-    }
+      id: 'analytics',
+      title: '📊 Data Analytics',
+      description:
+        'Make informed decisions with data that matters. We provide dashboards, tracking setups, and performance reports that turn raw data into actionable insights — helping you understand user behavior, optimize performance, and grow smarter.',
+      link: '#data-analytics',
+    },
   ];
 
   return (

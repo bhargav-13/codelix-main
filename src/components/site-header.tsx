@@ -110,14 +110,12 @@ export const SiteHeader = () => {
 
                     {/* Desktop: Call to Action Button */}
                     <div className="hidden md:block">
-                        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white rounded-lg shadow-lg border border-gray-100">
-                            <Link
-                                href="#connect"
-                                className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-all text-sm font-semibold shadow-lg hover:shadow-white/20"
-                            >
-                                Let&apos;s Connect
-                            </Link>
-                        </div>
+                        <Link
+                            href="#connect"
+                            className="bg-gradient-to-r from-blue-700 to-blue-900 text-white px-4 py-2 rounded-md hover:from-blue-900 hover:to-blue-700 transition-all text-sm font-semibold border-0 shadow-none focus:outline-none"
+                        >
+                            Let&apos;s Connect
+                        </Link>
                     </div>
                 </div>
 
@@ -129,25 +127,25 @@ export const SiteHeader = () => {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -10 }}
                             transition={{ duration: 0.15 }}
-                            className="md:hidden absolute top-16 right-4 left-auto w-56 bg-black/95 backdrop-blur-lg rounded-lg border border-gray-800 shadow-xl overflow-hidden"
+                            className="md:hidden absolute top-16 right-4 left-auto w-64 bg-white rounded-2xl border border-gray-200 shadow-2xl overflow-hidden p-3"
                         >
-                            <div className="py-1">
+                            <div className="py-1 flex flex-col gap-1">
                                 {navItems.map((item) => (
                                     <button
                                         key={item.href}
                                         onClick={() => handleNavigation(item.href)}
-                                        className={`block px-4 py-3 text-sm w-full text-left ${
-                                            isActive(item.href) ? 'bg-blue-50 text-blue-600' : 'text-gray-700 hover:bg-gray-50 hover:text-blue-600'
+                                        className={`block px-4 py-3 text-base w-full text-left rounded-lg transition-colors font-medium ${
+                                            isActive(item.href) ? 'bg-blue-50 text-blue-600' : 'text-gray-700 hover:bg-blue-50 hover:text-blue-600'
                                         }`}
                                     >
                                         {item.label}
                                     </button>
                                 ))}
-                                <div className="border-t border-gray-800 my-1"></div>
+                                <div className="border-t border-gray-100 my-2"></div>
                                 <Link
                                     href="#connect"
                                     onClick={() => setMobileMenuOpen(false)}
-                                    className="block px-4 py-3 text-sm text-center text-white bg-blue-600 hover:bg-blue-700 transition-colors"
+                                    className="block w-full px-4 py-3 text-base text-center font-semibold text-white rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-blue-600 hover:to-cyan-500 transition-all shadow"
                                 >
                                     Let&apos;s Connect
                                 </Link>
