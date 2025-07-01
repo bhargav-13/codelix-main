@@ -8,14 +8,21 @@ import { BackgroundLinesDemo } from '@/components/background-lines';
 export default function Home() {
   return (
     <>
-      <HeroParallaxDemo />
-      <BuildAppsSection />
-      <ServicesSection />
-      <TechnologiesSection />
+      <div id="home">
+        <HeroParallaxDemo />
+        <BuildAppsSection />
+      </div>
+      <div id="services">
+        <ServicesSection />
+      </div>
+      <div id="technologies">
+        <TechnologiesSection />
+      </div>
       <TestimonialSliderSection />
-      <div className="relative">
+      <div className="relative" id="contact">
         <BackgroundLinesDemo />
       </div>
+      {/* The footer will be wrapped with id 'contact' in layout or footer */}
     </>
   );
 }

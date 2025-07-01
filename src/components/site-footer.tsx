@@ -29,7 +29,7 @@ const socialLinks = [
 export function SiteFooter() {
   const currentYear = new Date().getFullYear();
   return (
-    <footer className="bg-[#23262f] text-gray-300 pt-12 pb-2 px-2 md:px-0">
+    <footer id="contact" className="bg-[#23262f] text-gray-300 pt-12 pb-2 px-2 md:px-0">
       <div className="max-w-7xl mx-auto relative flex flex-wrap justify-around items-start">
         {/* Contact Card */}
         <div className="bg-[#23262f] border border-[#353843] rounded-2xl p-6 flex flex-col min-w-[300px] max-w-sm w-full md:w-1/4 mx-auto md:mx-0 shadow-lg mb-8 md:mb-0">
@@ -75,7 +75,7 @@ export function SiteFooter() {
             <h3 className="text-sm font-semibold uppercase mb-4" style={{ color: '#3E7DFC' }}>CONTACT INFO</h3>
             <div className="space-y-2">
               <p className="text-gray-400 text-sm">info@codelix.com</p>
-              <p className="text-gray-400 text-sm">+91 9429629295</p>
+              <p className="text-gray-400 text-sm">+91 9429269295</p>
             </div>
           </div>
           <div>
