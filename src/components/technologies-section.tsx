@@ -33,7 +33,7 @@ export function TechnologiesSection() {
   ];
 
   return (
-    <section className="w-full py-20 bg-[#F2F8FC] relative">
+    <section className="w-full pt-20 pb-8 bg-[#F2F8FC] relative">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
