@@ -8,20 +8,18 @@ import { BackgroundLinesDemo } from '@/components/background-lines';
 export default function Home() {
   return (
     <>
-      <section id="home">
+     <div id="home">Add commentMore actions
         <HeroParallaxDemo />
-      </section>
-      <section id="services">
         <BuildAppsSection />
+      </div>
+      <div id="services">
         <ServicesSection />
-      </section>
-      <section id="technologies">
+      </div>
+      <div id="technologies">
         <TechnologiesSection />
-      </section>
-      <section id="testimonials">
-        <TestimonialSliderSection />
-      </section>
-      <div className="relative">
+      </div>
+      <TestimonialSliderSection />
+      <div className="relative" id="contact">
         <BackgroundLinesDemo />
       </div>
     </>

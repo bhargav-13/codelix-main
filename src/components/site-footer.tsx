@@ -20,10 +20,48 @@ const contactInfo = [
 ];
 
 const socialLinks = [
-  { name: 'Instagram', href: '#', icon: <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="1" /></svg> },
-  { name: 'LinkedIn', href: '#', icon: <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2" /><path d="M8 11v5M8 8v.01M12 16v-5m0 0a2 2 0 114 0v5" /></svg> },
-  { name: 'GitHub', href: '#', icon: <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.021c0 4.426 2.865 8.181 6.839 9.504.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.34-2.221-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.747-1.025 2.747-1.025.546 1.378.202 2.397.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.847-2.337 4.695-4.566 4.944.36.31.682.924.682 1.863 0 1.345-.012 2.428-.012 2.757 0 .267.18.578.688.48C19.138 20.2 22 16.447 22 12.021 22 6.484 17.523 2 12 2z" /></svg> },
-  { name: 'WhatsApp', href: '#', icon: <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path d="M16.862 14.674c-.253-.127-1.494-.735-1.724-.82-.231-.084-.4-.127-.57.127-.169.253-.653.82-.8.989-.147.169-.293.191-.546.064-.253-.127-1.068-.393-2.034-1.253-.752-.67-1.26-1.497-1.409-1.75-.147-.253-.016-.39.111-.516.113-.113.253-.293.38-.44.127-.147.169-.253.253-.422.084-.169.042-.317-.021-.444-.064-.127-.57-1.375-.779-1.883-.206-.495-.416-.427-.57-.435-.147-.007-.317-.009-.487-.009-.169 0-.444.063-.678.317-.233.253-.89.87-.89 2.122 0 1.252.912 2.46 1.039 2.633.127.169 1.796 2.742 4.355 3.735.609.21 1.084.335 1.454.429.611.155 1.167.133 1.606.081.49-.058 1.494-.61 1.705-1.201.211-.592.211-1.099.147-1.201-.063-.103-.231-.169-.484-.296z" /></svg> },
+  {
+    name: 'Instagram',
+    href: 'https://instagram.com/codelix.in', // Replace with your actual Instagram URL
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+        <rect width="18" height="18" x="3" y="3" rx="5" />
+        <circle cx="12" cy="12" r="4" />
+        <circle cx="17.5" cy="6.5" r="1" />
+      </svg>
+    ),
+  },
+  {
+    name: 'LinkedIn',
+    href: 'https://www.linkedin.com/company/codelixit-solutions/', // Replace with your actual LinkedIn URL
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+        <rect width="18" height="18" x="3" y="3" rx="2" />
+        <path d="M8 11v5M8 8v.01M12 16v-5m0 0a2 2 0 114 0v5" />
+      </svg>
+    ),
+  },
+  {
+    name: 'Facebook',
+    href: 'https://facebook.com/', // Replace with your actual Facebook URL
+    icon: (
+      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <circle cx="12" cy="12" r="10" fill="#1877F3" />
+        <path d="M15.36 8.5H13.5V7.4c0-.44.29-.54.49-.54h1.31V4.97L13.52 5c-2.13 0-2.62 1.59-2.62 2.61v.89H9v2.15h1.9V19h2.6v-7.35h1.75l.21-2.15z" fill="#fff"/>
+      </svg>
+    ),
+  },
+  {
+    name: 'Upwork',
+    href: 'https://www.upwork.com/agencies/1909135382009927479/', // Replace with your actual Upwork URL
+    icon: (
+      <svg className="w-5 h-5" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g>
+          <path d="M61.5 40.7c0-5.1-4.1-9.2-9.2-9.2-4.1 0-7.5 2.7-8.8 6.4l-4.6-8.9-4.7 2.4 3.9 7.6c-1.7 1.1-3.7 1.7-5.8 1.7-5.8 0-10.5-4.7-10.5-10.5V27H16v3.2c0 8.7 7 15.7 15.7 15.7 2.7 0 5.2-.7 7.4-1.9l2.3 4.5c-1.2 2.1-2.9 3.8-5.1 3.8-2.5 0-4.6-2.7-4.6-6V27h-4.3v19.3c0 6.3 4.5 10.7 10.5 10.7 4.2 0 7.5-2.3 9.7-5.8l2.6 5.1h4.7l-5.2-10c.5-1.2.8-2.5.8-3.8zm-9.2 5.4c-3 0-5.4-2.4-5.4-5.4 0-3 2.4-5.4 5.4-5.4s5.4 2.4 5.4 5.4c0 3-2.4 5.4-5.4 5.4z" fill="#6fda44"/>
+        </g>
+      </svg>
+    ),
+  },
 ];
 
 export function SiteFooter() {
@@ -74,8 +112,8 @@ export function SiteFooter() {
           <div>
             <h3 className="text-sm font-semibold uppercase mb-4" style={{ color: '#3E7DFC' }}>CONTACT INFO</h3>
             <div className="space-y-2">
-              <p className="text-gray-400 text-sm">info@codelix.com</p>
-              <p className="text-gray-400 text-sm">+91 9429629295</p>
+              <p className="text-gray-400 text-sm">info@codelix.in</p>
+              <p className="text-gray-400 text-sm">+91 9429269295</p>
             </div>
           </div>
           <div>
