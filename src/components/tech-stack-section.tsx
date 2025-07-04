@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const technologies = [
   { name: 'React', logo: '/technologies/react.svg' },
-  { name: 'Next.js', logo: '/technologies/nextjs.svg' },
+  { name: 'Next.js', logo: '/mini-logo.svg' },
   { name: 'Node.js', logo: '/technologies/nodejs.svg' },
   { name: 'TypeScript', logo: '/technologies/typescript.svg' },
   { name: 'Tailwind CSS', logo: '/technologies/tailwindcss.svg' },
